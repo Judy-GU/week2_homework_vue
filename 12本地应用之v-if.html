@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="切换" @click="toggltisshow">
+        <p v-if="isshow">hhahh</p>
+        <h2 v-if="tem>=35">so hot</h2>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isshow:false,//v-show改变display，v-if直接移除；频繁切换用v-show，反之用v-if。
+                tem:40
+            },
+            methods:{
+                toggltisshow:function(){
+                    this.isshow=!this.isshow;
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

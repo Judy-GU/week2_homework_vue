@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>v-bind</title>
+    <style>
+        .active{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+         <img :src="imgSrc">
+         <br>
+         <img :src="imgSrc" alt="" :title="imgTitle+'!!!@@@###'" :class="{active:isActive}" @click="toggleActive">
+         <br>
+
+        
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            //v-bind用来设置元素属性，eg：src，title class
+            //属性名=表达式
+            //v-bind可省略
+            el:"#app",
+            data:{
+                imgSrc:"https://www.itheima.com/images/logo.png",
+                imgTitle:"heimachengxuyuan",
+                isActive:false
+            },
+            methods:{
+                toggleActive:function(){
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

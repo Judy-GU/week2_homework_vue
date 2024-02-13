@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>v-model 获取和设置表单元素的值（双向数据绑定）</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="修改message" @click="setm">
+        <input type="text" v-model="message" @keyup.enter="getm">
+        <h2>{{message}}</h2>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            //更改两边任意一边数据，两边都会同步更新对方的值
+            //
+            el:"#app",
+            data:{
+                message:"money"
+            },
+            methods:{
+                getm:function(){
+                    alert(this.message);
+                },
+                setm:function(){
+                    this.message="balaa"
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

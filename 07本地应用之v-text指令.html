@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-text="message+'!'">深圳</h2>
+        <h2>{{message+"!"}}深圳</h2>
+        <h2 v-text="info+'$'">深圳</h2>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"fuck",
+                //v-test用来设置文本的表达值，内部使用单引号。而之前学的两个大括号是插值表达式，内部单双引号都可以。
+                //若只进行部分替换，使用插值表达式
+                info:"balabala"
+            }
+        })
+    </script>
+    
+</body>
+</html>

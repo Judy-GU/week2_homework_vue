@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>el挂载点</title>
+</head>
+<body>
+    {{ message }}  
+    <div id="app" class="app">
+        {{ message }}
+        <span>{{ message }}</span>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            //el:"#app",
+            //el:".app",  class,id,标签选择器都可以，建设使用id选择器  
+            //标签都可以，但必须是双标签，但不能挂载到body或html上，建议挂载到div上
+            //vue会管理el选项命中的元素及其内部的后代元素，el用来设置vue实例挂载（管理）中的元素
+            el:"div",
+            data:{
+                message:"黑马程序员"
+            }
+        })
+    </script>
+    
+    
+</body>
+</html>

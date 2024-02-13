@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>v-for根据数据生成列表结构</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="add" @click="add">
+        <input type="button" value="minus" @click="remove">
+        <ul>
+            <li v-for="(item,index) in arr">{{index+1}} 黑马程序员校区：{{ item}}</li>
+        </ul>
+        <h2 v-for="item in veg" v-bind:title="item.name">{{item.name}}</h2>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                //item对应arr中遍历的每一项 两个大括号中的字母要与v-for后面的表达式中，in前面一样
+                //(item.index) in 数据；
+                arr:["beijing","shanghai","guangzhou","shenzhen"],
+                veg:[
+                    {name:"apple"},
+                    {name:"banana"}
+                ]
+            },
+            methods:{
+                add:function(){
+                    this.veg.push({name:"pear"});
+                },
+                remove:function(){
+                    this.veg.shift();
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

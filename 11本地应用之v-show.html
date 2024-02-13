@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="点击" @click="changeIsshow">
+        <input type="button" value="年龄" @click="addage">
+        <img v-show="isShow" src="../图库/dumplings.jpg">
+        <img v-show="age>18" src="../图库/dumplings.jpg">
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isShow:false,
+                age:15
+            },
+            methods:{
+                changeIsshow:function(){
+                    this.isShow=!this.isShow;
+                },
+                addage:function(){
+                    this.age++;
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
